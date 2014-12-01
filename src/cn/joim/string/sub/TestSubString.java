@@ -21,7 +21,7 @@ public class TestSubString {
 
 	}
 
-	private static String nameArray[] = { "joim你好，大苏打丰富的斯蒂芬", "发生的房贷首付第三方的首付第",
-			"fsdfsfsdfdsfdsdfdsfdsf", "打算fdfd发生g的房首付第三方岁" };
+	private static String nameArray[] = { "joim浣犲ソ锛屽ぇ鑻忔墦涓板瘜鐨勬柉钂傝姮", "鍙戠敓鐨勬埧璐烽浠樼涓夋柟鐨勯浠樼",
+			"fsdfsfsdfdsfdsdfdsfdsf", "鎵撶畻fdfd鍙戠敓g鐨勬埧棣栦粯绗笁鏂瑰瞾" };
 
 }
