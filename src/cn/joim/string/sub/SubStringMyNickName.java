@@ -2,11 +2,11 @@ package cn.joim.string.sub;
 
 /**
  * 
- * ½ØÈ¡8¸ö×Ö·ûµÄÖÐÎÄêÇ³Æ£¬ ÆäÓ¢ÎÄËã°ë¸ö×Ö·û,ÖÐÎÄËã1¸ö×Ö·û¡£ </br>
+ * æˆªå–8ä¸ªå­—ç¬¦çš„ä¸­æ–‡æ˜µç§°ï¼Œ å…¶è‹±æ–‡ç®—åŠä¸ªå­—ç¬¦,ä¸­æ–‡ç®—1ä¸ªå­—ç¬¦ã€‚ </br>
  * 
- * ÊäÈë£º¡°joimÄãºÃ£¬´óËÕ´ò·á¸»µÄË¹µÙ·Ò¡± Êä³ö£º¡°joimÄãºÃ£¬´óËÕ´ò¡± 10¸ö×Ö·û</br> ÊäÈë£º¡°·¢ÉúµÄ·¿´ûÊ×¸¶µÚÈý·½µÄÊ×¸¶µÚ¡±
- * Êä³ö£º¡°·¢ÉúµÄ·¿´ûÊ×¸¶µÚ¡± 8¸öÖÐÎÄ×Ö·û. </br> ÊäÈë£º¡°fsdfsfsdfdsfdsdfdsfdsf¡± Êä³ö£º¡°fsdfsfsdfdsfdsdf¡±
- * 16¸öÓ¢ÎÄ×Ö·û¡£ </br> ÊäÈë£º¡°´òËãfdfd·¢ÉúgµÄ·¿Ê×¸¶µÚÈý·½Ëê¡± Êä³ö£º¡°´òËãfdfd·¢ÉúgµÄ·¿¡± 8.5</br> 1--1/2</br>
+ * è¾“å…¥ï¼šâ€œjoimä½ å¥½ï¼Œå¤§è‹æ‰“ä¸°å¯Œçš„æ–¯è’‚èŠ¬â€ è¾“å‡ºï¼šâ€œjoimä½ å¥½ï¼Œå¤§è‹æ‰“â€ 10ä¸ªå­—ç¬¦</br> è¾“å…¥ï¼šâ€œå‘ç”Ÿçš„æˆ¿è´·é¦–ä»˜ç¬¬ä¸‰æ–¹çš„é¦–ä»˜ç¬¬â€
+ * è¾“å‡ºï¼šâ€œå‘ç”Ÿçš„æˆ¿è´·é¦–ä»˜ç¬¬â€ 8ä¸ªä¸­æ–‡å­—ç¬¦. </br> è¾“å…¥ï¼šâ€œfsdfsfsdfdsfdsdfdsfdsfâ€ è¾“å‡ºï¼šâ€œfsdfsfsdfdsfdsdfâ€
+ * 16ä¸ªè‹±æ–‡å­—ç¬¦ã€‚ </br> è¾“å…¥ï¼šâ€œæ‰“ç®—fdfdå‘ç”Ÿgçš„æˆ¿é¦–ä»˜ç¬¬ä¸‰æ–¹å²â€ è¾“å‡ºï¼šâ€œæ‰“ç®—fdfdå‘ç”Ÿgçš„æˆ¿â€ 8.5</br> 1--1/2</br>
  * */
 public class SubStringMyNickName {
 
@@ -31,7 +31,7 @@ public class SubStringMyNickName {
 
 			char c = res.charAt(i);
 			if (!isLetter(c)) {
-				// ·ÇÓ¢ÎÄ×Ö·û.
+				// éžè‹±æ–‡å­—ç¬¦.
 				resultLength += 2;
 			} else {
 				resultLength += 1;
@@ -42,7 +42,7 @@ public class SubStringMyNickName {
 	}
 
 	/**
-	 * ¼ì²âÊÇºº×Ö»¹ÊÇÓ¢ÎÄ»òÊý×Ö
+	 * æ£€æµ‹æ˜¯æ±‰å­—è¿˜æ˜¯è‹±æ–‡æˆ–æ•°å­—
 	 * 
 	 * @param c
 	 * @return
