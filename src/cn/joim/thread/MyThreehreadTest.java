@@ -4,6 +4,11 @@ public class MyThreehreadTest {
 
 	public static void main(String[] args) {
 
+		/**
+		 * just like an opration to files, this may write dirty data to a file,
+		 * result of making file damaged. .
+		 * */
+
 		Thread mThread1 = new Thread(new Runnable() {
 
 			@Override
