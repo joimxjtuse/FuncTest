@@ -34,6 +34,7 @@ public class LampAlgorithm {
 	 * ....
 	 * 16 = 1、2、4、8、16                 奇数
 	 * 32 = 1、2、4、8、16、21         偶数
+	 * 答案变成：查找[1,n]内，约数为整数的整数。
 	 * */
 	public static void main(String[] args) {
 		int n = 0,k = 0;
