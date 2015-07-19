@@ -1,6 +1,7 @@
 package cn.joim.design_patterns.proxy;
 
 import cn.joim.design_patterns.component.Node;
+import cn.joim.design_patterns.visitor.Visitor;
 
 public class Link implements Node {
 
@@ -23,6 +24,13 @@ public class Link implements Node {
 	@Override
 	public Node get(int n) {
 		return mProxyNode.get(n);
+	}
+
+	@Override
+	public void accept(Visitor mVisitor) {
+		if (null != mVisitor) {
+			mVisitor.visit(this);
+		}
 	}
 
 }
