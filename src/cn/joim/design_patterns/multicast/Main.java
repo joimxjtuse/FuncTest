@@ -33,6 +33,9 @@ public class Main {
 		CoinChanger mChangerHandler = new CoinChanger();
 		KeyPad mKeyPad = new KeyPad();
 
+		/**
+		 * mChangerHandler 和内部类定义的Handler仅接收硬币插入的事件。
+		 * */
 		mRegistry.register(mCoinInsertedEvent, mChangerHandler);
 		mRegistry.register(mCoinInsertedEvent, new Handler() {
 
@@ -44,6 +47,9 @@ public class Main {
 			}
 		});
 
+		/**
+		 * mKeyPad 和内部类定义的Handler仅接收硬币退出的事件。
+		 * */
 		mRegistry.register(mCoinReleaseEvent, mKeyPad);
 		mRegistry.register(mCoinReleaseEvent, new Handler() {
 
@@ -57,6 +63,9 @@ public class Main {
 
 		mCoinInsertedEvent.setCoin(12);
 		mRegistry.notify(mCoinInsertedEvent);
+		
+		mCoinReleaseEvent.setReleased(66);
+		mRegistry.notify(mCoinReleaseEvent);
 
 	}
 }
