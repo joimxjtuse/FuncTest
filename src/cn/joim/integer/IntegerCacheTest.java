@@ -15,6 +15,13 @@ public class IntegerCacheTest {
 		System.out.println(a1 == a2); // true
 		System.out.println(b1 == b2); // false
 		System.out.println(c1 == c2); // true
+		
+		short a = 256;
+		System.out.println("before, a = " + a);
+		
+		
+		a = (short) (a + 1);
+		System.out.println("a = " + a );
 	}
 
 }
