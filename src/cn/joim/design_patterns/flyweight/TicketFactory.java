@@ -13,6 +13,8 @@ public class TicketFactory {
 			System.out.println("use cache.");
 			return sTicket.get(key);
 		} else {
+			// Todo the following code is not safe for multi treading programming, should add lock,
+			// double check containsKey inside the lock before put new ticket.
 			System.out.println("new ticket");
 			Ticket ticket = new TrainTicket(from, to);
 			sTicket.put(key, ticket);
