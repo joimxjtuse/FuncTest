@@ -1,23 +1,29 @@
 package cn.joim.design_patterns.prototype;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class JoimDoc implements Cloneable {
 
+	private final static Object myLockImages = new Object();
 	private String title;
 
-	private ArrayList<String> mImages;
+	private CopyOnWriteArrayList<String> mImages;
 
-	public void setTitle(String title) {
+	public JoimDoc setTitle(String title) {
 		this.title = title;
+		return this;
 	}
 
-	public void addImage(String imgDes) {
-		if (null == mImages) {
-			mImages = new ArrayList<String>();
+	public JoimDoc addImage(String imgDes) {
+		if (this.mImages == null){
+			synchronized (myLockImages){
+				if (mImages == null){
+					this.mImages = new CopyOnWriteArrayList<String>();
+				}
+			}
 		}
-		mImages.add(imgDes);
+		this.mImages.add(imgDes);
+		return this;
 	}
 
 	@Override
@@ -39,7 +45,7 @@ public class JoimDoc implements Cloneable {
 			/**
 			 * 深拷贝. ArrayList.clone内对数组进行了拷贝。
 			 * */
-			coptDoc.mImages = (ArrayList<String>) this.mImages.clone();
+			coptDoc.mImages = (CopyOnWriteArrayList<String>) this.mImages.clone();
 			return coptDoc;
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
@@ -52,7 +58,7 @@ public class JoimDoc implements Cloneable {
 		System.out.println("----------start show----------");
 		System.out.println("title: " + title);
 		System.out.println("images:");
-		if (null != mImages && !mImages.isEmpty()) {
+		if (mImages != null) {
 			for (String imageDes : mImages) {
 				System.out.println("  " + imageDes);
 			}
