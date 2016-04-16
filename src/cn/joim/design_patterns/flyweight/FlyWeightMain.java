@@ -1,5 +1,8 @@
 package cn.joim.design_patterns.flyweight;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 public class FlyWeightMain {
 
 	/**
@@ -17,6 +20,17 @@ public class FlyWeightMain {
 
 		Ticket t3 = TicketFactory.getTicket("北京", " 内蒙古");
 		t3.showTicketInfo("下铺");
+
+		Executor exec = Executors.newFixedThreadPool(15);
+		for(int i=0;i<15;i++){
+			Runnable task = new Runnable() {
+				@Override
+				public void run() {
+					ConcurrencyTicketFactory.getTicket("Peking", "Harbin").showTicketInfo("上铺");
+				}
+			};
+			exec.execute(task);
+		}
 	}
 
 }
