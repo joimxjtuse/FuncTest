@@ -69,7 +69,7 @@ public class PrototypeMain {
 		pool.shutdown();
 
 		latch.await();
-		// mCopyDoc2's images is the screenshot of what origin doc is;
+		// mCopyDoc2's images is the screenshot of what origin doc is, when copy operation is taking place;
 		mCopyDoc2.showDoc();
 
 	}
