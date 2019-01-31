@@ -55,7 +55,7 @@ public class Base1 {
             }
         });
         //Lambda
-        button.addActionListener((listener) -> System.out.println("Hello World!"));
+        button.addActionListener((event) -> System.out.println("Hello World!"));
     }
 
     private static void sortBase() {
