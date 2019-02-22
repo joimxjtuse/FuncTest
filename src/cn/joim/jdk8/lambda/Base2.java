@@ -82,22 +82,22 @@ public class Base2 {
         minAndMax();
 
         /**
-         * use 'map'.
+         * use 'map' 来执行组合操作.
          *
          * */
         map();
 
         /**
          * use 'parallelStream'.
-         *
+         * 并行流.
          * 将任务分为多个小任务分而治之; 机制:ForkJoinPool
          * */
         parallelStream();
 
         /**
-         * use 'summary' 'statistics'.
+         * use 'summaryStatistics'.
          *
-         * 获取6流中的各种汇总数据， 比如获取最大值，最小值，平均值等。
+         * 获取流中的各种汇总数据， 比如获取最大值，最小值，平均值等。
          * */
         obtainVariousSummaryData();
     }
