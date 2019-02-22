@@ -41,7 +41,7 @@ public class Base1 {
         //Lambda
         players.forEach(player -> System.out.print(player + ";"));
         System.out.println();
-        //函数式
+        //方法引用
         players.forEach(System.out::print);
     }
 
