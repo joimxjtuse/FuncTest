@@ -61,4 +61,8 @@ class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public static int compareByName(Person a, Person b) {
+        return a.getFirstName().compareTo(b.getFirstName());
+    }
 }
