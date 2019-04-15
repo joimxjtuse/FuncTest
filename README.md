@@ -1,5 +1,5 @@
 # FuncTest
 my func in life or work.
 
-leetcode
+leetcode &
 设计模式
