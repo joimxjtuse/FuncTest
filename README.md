@@ -1,4 +1,4 @@
 # FuncTest
 my func in life or work.
 
-my exercises~!
+添加一些 刷leetcode的代码记录吧。
