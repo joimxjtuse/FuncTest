@@ -1,5 +1,7 @@
 package cn.joim.design_patterns.multicast;
 
+import java.util.Observable;
+
 public class Main {
 
 	/**
@@ -32,6 +34,8 @@ public class Main {
 
 		CoinChanger mChangerHandler = new CoinChanger();
 		KeyPad mKeyPad = new KeyPad();
+
+		Observable o;
 
 		/**
 		 * mChangerHandler 和内部类定义的Handler仅接收硬币插入的事件。

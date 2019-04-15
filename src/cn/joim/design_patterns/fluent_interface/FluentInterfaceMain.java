@@ -31,7 +31,7 @@ public class FluentInterfaceMain {
 		integerList.addAll(Arrays.asList(1, -61, 14, -22, 18, -87, 6, 64, -82, 26, -98, 97, 45, 23, 2, -68, 45));
 
 		prettyPrint("The initial list contains: ", integerList);
-
+		
 		List<Integer> firstFiveNegatives = SimpleFluentIterable.fromCopyOf(integerList).filter(negatives()).first(3)
 				.asList();
 		prettyPrint("The first three negative values are: ", firstFiveNegatives);
