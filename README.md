@@ -1,4 +1,5 @@
 # FuncTest
 my func in life or work.
 
-my exercises~!
+leetcode &
+设计模式
