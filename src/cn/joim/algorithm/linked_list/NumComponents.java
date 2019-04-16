@@ -1,5 +1,8 @@
 package cn.joim.algorithm.linked_list;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 817.  https://leetcode-cn.com/problems/linked-list-components/
  * 给定一个链表（链表结点包含一个整型值）的头结点 head。
@@ -35,7 +38,29 @@ public class NumComponents {
 
     public int numComponents(ListNode head, int[] G) {
 
-        return 0;
+        Set<Integer> set = new HashSet();
+        for (int item : G) {
+            set.add(item);
+        }
+        int result = 0;
+        ListNode p = head;
+
+        int hasCount = 0;
+        while (p != null) {
+            if (set.remove(p.val)) {
+                hasCount++;
+            } else {
+                if (hasCount > 0) {
+                    result++;
+                }
+                hasCount = 0;
+            }
+            p = p.next;
+        }
+        if (hasCount > 0) {
+            result++;
+        }
+        return result;
     }
 
 
@@ -43,8 +68,8 @@ public class NumComponents {
 
         int node[] = {0, 1, 2, 3, 4};
         int G[] = {0, 3, 1, 4};
-        new NumComponents().numComponents(ListNode.createListNode(node), G);
-        System.out.print("");
+        int result = new NumComponents().numComponents(ListNode.createListNode(node), G);
+        System.out.print("result = " + result);
     }
 
 }
