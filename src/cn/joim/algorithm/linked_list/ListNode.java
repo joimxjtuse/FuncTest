@@ -24,7 +24,7 @@ public class ListNode {
 
     public static ListNode createListNode(int[] arr) {
         ListNode node = null;
-        if (arr != null) {
+        if (arr != null && arr.length > 0) {
 
             node = new ListNode(arr[0]);
             ListNode p = node;
