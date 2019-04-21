@@ -1,9 +1,9 @@
-package cn.joim.design_patterns.consumer_producer;
+package cn.joim.design_patterns.consumer_producer.fresco;
 
 /**
  * Created by Joim-PC on 2016/6/12.
  */
-public class DiskProducer implements Producer{
+public class EncodedProducer  implements Producer{
 
     private Producer mProducer;
 
@@ -12,7 +12,7 @@ public class DiskProducer implements Producer{
         if(hasResult()){
             consumer.onNewResult();
         }else if(shouldContinueLoad()){
-            mProducer.produceResult(new DiskConsumer(consumer));
+            mProducer.produceResult(new EncodeConsumer(consumer));
         }else{
             consumer.onFailure();
         }
@@ -33,10 +33,10 @@ public class DiskProducer implements Producer{
         return false;
     }
 
-    private class DiskConsumer implements Consumer{
+    private class EncodeConsumer implements Consumer{
 
         Consumer consumer;
-        DiskConsumer(Consumer consumer){
+        EncodeConsumer(Consumer consumer){
             this.consumer = consumer;
 
         }
