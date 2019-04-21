@@ -74,6 +74,80 @@ public class Bezier {
 
             bezier(pointArrs, t);
         }
+
+        final Thread t3 = new Thread(() -> {
+            try {
+//                System.out.println("start t2");
+//                Thread.currentThread().join(6000);
+//                System.out.println("name : t2");
+
+                long beginTime = System.currentTimeMillis();
+                System.out.println("start : t3");
+                Thread.sleep(1000);
+                long endTime = System.currentTimeMillis();
+                System.out.println("end : t3, cost : " + (endTime - beginTime));
+            } catch (Exception ex) {
+
+            }
+        }, "t3");
+
+        final Thread t1 = new Thread(() -> {
+
+//            a();
+            try {
+                System.out.println("start t1");
+
+                t3.join(3000);
+                System.out.println("end : t1");
+//            Thread.sleep(2000);
+            } catch (Exception ex) {
+
+            }
+
+
+        }, "t1");
+
+        final Thread t2 = new Thread(() -> {
+            try {
+                System.out.println("start t2");
+                t3.join(6000);
+                System.out.println("end : t2");
+
+//            Thread.sleep(2000);
+            } catch (Exception ex) {
+
+            }
+        }, "t2");
+
+        t3.start();
+        t1.start();
+        t2.start();
+
+    }
+
+    static Object objLock = new Object();
+
+    private static void a() {
+
+        synchronized (objLock) {
+            try {
+                System.out.println("thread before :" + Thread.currentThread().getName());
+                for (int i = 0; i < 10000000; i++) {
+
+                }
+//                a();
+                objLock.wait(getWaitTime(Thread.currentThread().getName()));
+                System.out.println("thread after :" + Thread.currentThread().getName());
+            } catch (Exception ex) {
+
+            }
+
+        }
+
+    }
+
+    private static int getWaitTime(String tname) {
+        return tname.equals("t1") ? 5000 : 3500;
     }
 
 }
