@@ -1,5 +1,11 @@
-# FuncTest
-my func in life or work.
+# 工作和学习中遇到的一些问题及其整理
+##算法<br>
+###leet-code
+###面试题
+##设计模式<br>
+### 经典的设计模式
+### 扩展的设计模式
+##基础知识等<br>
 
-leetcode &
-设计模式
+
+
