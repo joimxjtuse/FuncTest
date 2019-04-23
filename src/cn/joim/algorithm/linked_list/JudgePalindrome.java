@@ -62,6 +62,9 @@ public class JudgePalindrome {
         return result;
     }
 
+    /**
+     * 统计下，在1.5n的遍历次数后可以判断是否为回文，平均时间复杂度为O(n),空间复杂度为O(1).
+     */
     private static boolean isPalindromeBetterImpl(ListNode head) {
         if (head == null || head.next == null) {
             return true;
