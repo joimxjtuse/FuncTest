@@ -50,29 +50,28 @@ public class MergeSort {
     }
 
     private void merge(int[] array, int low, int mid, int high) {
-        int[] temp = new int[high - low + 1];
-        int i = low;
-        int j = mid + 1;
-        int k = 0;
-        // 把较小的数先移到新数组中
-        while (i <= mid && j <= high) {
-            if (array[i] < array[j]) {
-                temp[k++] = array[i++];
+        //[low,mid) 以及[mid,high]是两个已经排好序的子序列
+        //只需要把它们的按顺序进行排序即可.
+        int nLowPosition = low, nHighPosition = mid + 1;
+        int tempArr[] = new int[high - low + 1];
+        int i = 0;
+        while (nLowPosition <= mid && nHighPosition <= high) {
+            if (array[nLowPosition] > array[nHighPosition]) {
+                tempArr[i++] = array[nHighPosition++];
             } else {
-                temp[k++] = array[j++];
+                tempArr[i++] = array[nLowPosition++];
             }
         }
-        // 把左边剩余的数移入数组
-        while (i <= mid) {
-            temp[k++] = array[i++];
+
+        while (nLowPosition <= mid) {
+            tempArr[i++] = array[nLowPosition++];
         }
-        // 把右边边剩余的数移入数组
-        while (j <= high) {
-            temp[k++] = array[j++];
+        while (nHighPosition <= high) {
+            tempArr[i++] = array[nHighPosition++];
         }
-        // 把新数组中的数覆盖nums数组
-        for (int x = 0; x < temp.length; x++) {
-            array[x + low] = temp[x];
+
+        for (i = 0; i < tempArr.length; i++) {
+            array[i + low] = tempArr[i];
         }
     }
 }
