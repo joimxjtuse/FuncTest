@@ -1,0 +1,4 @@
+Java的类加载主要包含三种：
+BootstrapeClassLoader;
+ExtClassLoader;
+AppClassLoader.
