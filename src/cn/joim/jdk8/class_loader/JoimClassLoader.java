@@ -50,6 +50,8 @@ public class JoimClassLoader extends ClassLoader {
                 }
             }
         }
+
+        //TODO 可能在定义类之前，需要对字节码文件进行解密操作.
         return defineClass(null, value, 0, value.length, null);
     }
 
