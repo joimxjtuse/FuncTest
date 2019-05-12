@@ -1,7 +1,5 @@
 package cn.joim.jdk8.class_loader;
 
-import sun.text.resources.ar.CollationData_ar;
-
 public class ClassLoaderTest {
 
     public static void main(String[] args) {
@@ -13,26 +11,25 @@ public class ClassLoaderTest {
          * */
         ClassLoader bootstrapLoader = System.class.getClassLoader();
         // 启动类加载器是由C++写嵌套在JVM内部，所以输出结果才会为null.
-        System.out.println("loader info: " +
-                bootstrapLoader != null ? bootstrapLoader.getClass().getName() : "null"
-        );
-
+        if (bootstrapLoader != null) {
+            System.out.println("loader info: " + bootstrapLoader.getClass().getName());
+        }
         /**
          * ExtClassLoader: 负责加载JAVA_HOME/lib/ext 目录中的类型.
          *
          * */
-        ClassLoader extClassLoader = CollationData_ar.class.getClassLoader();
-        System.out.println("loader info: " +
-                extClassLoader != null ? extClassLoader.getClass().getName() : "null"
-        );
+        //TODO 看来教材上提供的JAVA_HOME/lib/ext中的类已经在11上移除类.
+//        ClassLoader extClassLoader = sun.text.resources.ar.CollationData_ar.class.getClassLoader();
+//        System.out.println("loader info: " +
+//                extClassLoader != null ? extClassLoader.getClass().getName() : "null"
+//        );
 
         /**
          * AppClassLoader: 负责加载ClassPath目录中的类型.
          *
          * */
         ClassLoader appClassLoader = ClassLoaderTest.class.getClassLoader();
-        System.out.println("loader info: " +
-                appClassLoader != null ? appClassLoader.getClass().getName() : "null"
+        System.out.println(appClassLoader != null ? appClassLoader.getClass().getName() : "null"
         );
 
 
