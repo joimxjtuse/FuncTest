@@ -1,5 +1,9 @@
 package cn.joim.jdk8.class_loader;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+
 public class JoimClassLoader extends ClassLoader {
 
     /***
@@ -17,16 +21,36 @@ public class JoimClassLoader extends ClassLoader {
      *
      * */
 
+    private String byteCodePath;
 
-    @Override
-    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-        return super.loadClass(name, resolve);
+    public JoimClassLoader(String byteCodePath) {
+
+        super();
+        this.byteCodePath = byteCodePath;
     }
-
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-        return super.findClass(name);
+
+        byte[] value = null;
+        BufferedInputStream in = null;
+        try {
+            in = new BufferedInputStream(new FileInputStream(byteCodePath + name + ".class"));
+            value = new byte[in.available()];
+            in.read(value);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (in != null) {
+
+                try {
+                    in.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        return defineClass(null, value, 0, value.length, null);
     }
 
 }
