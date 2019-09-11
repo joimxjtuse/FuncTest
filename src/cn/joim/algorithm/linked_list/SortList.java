@@ -26,10 +26,11 @@ public class SortList {
 
     public static void main(String[] args) {
 
-        int array[] = {-1, 5, 3, , 4, 0};
+        //int array[] = {-1, 5, 3, 4, 0};
         int array[] = {4, 2, 1, 3};
         ListNode listNode = ListNode.createListNode(array);
 
+        System.out.println("ok.");
     }
 
     /**
