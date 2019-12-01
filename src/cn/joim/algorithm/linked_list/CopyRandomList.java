@@ -11,6 +11,14 @@ package cn.joim.algorithm.linked_list;
  * */
 public class CopyRandomList {
 
+    private static class Node {
+
+        int val;
+        Node next;
+        Node random;
+
+    }
+
     public static void main(String[] args) {
 
         Node head = null;
@@ -42,15 +50,15 @@ public class CopyRandomList {
 
     /**
      * 思路分析：
-     *
+     * <p>
      * 给定一个单链表: a -> b -> c -> d;
      * step 1. 在每一个节点X之间添加一个X'，其random节点指向原节点的random节点：
-     *        a -> a' -> b -> b' -> c -> c' -> d -> d';
+     * a -> a' -> b -> b' -> c -> c' -> d -> d';
      * step 2. a'节点的random节点的next即为a'.random的最终位置；
      * step 3. 遍历原节点，使得：
-     *        a -> b -> c -> d,
-     *        a' -> b' -> c' -> d'.
-     * */
+     * a -> b -> c -> d,
+     * a' -> b' -> c' -> d'.
+     */
     public Node copyRandomList(Node head) {
 
         //Next pointer of node with val 1 from the original list was modified.
@@ -78,7 +86,7 @@ public class CopyRandomList {
         p = head;
         while (p != null) {
             if (nStart % 2 == 0) {
-                if(p.random != null){
+                if (p.random != null) {
                     p.random = p.random.next;
                 }
             }
